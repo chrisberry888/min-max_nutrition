@@ -1,0 +1,19 @@
+For the following summaries, I break it down by which USDA dataset I'm using (Foundation Foods vs <OTHER>), then I break it down based on various additional restraints I place on the problem. The default restraints I'm using for all problems is the recommended daily nutrient value as outlined in the jupyter file.
+
+
+
+FOUNDATION FOODS:
+
+Default Restraints:
+-Beef, round, top round roast, boneless, separable lean only, trimmed to 0" fat, select, raw: 52.4 g
+-Lettuce, cos or romaine, raw: 525.9 g
+-Salt, table, iodized: 1.5 g
+-Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim): 579.7 g
+-Beans, Dry, Red (0% moisture): 12.6 g
+-Broccoli, raw: 294.1 g
+-Eggs, Grade A, Large, egg whole: 122.7 g
+-Almond milk, unsweetened, plain, shelf stable: 412.7 g
+-Spinach, baby: 122.9 g
+-Mushroom, maitake: 111.3 g
+Total Calories: 777.7
+Total Mass: 2235.8 g
