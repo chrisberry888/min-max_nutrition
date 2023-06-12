@@ -17,3 +17,25 @@ Default Restraints:
 -Mushroom, maitake: 111.3 g
 Total Calories: 777.7
 Total Mass: 2235.8 g
+
+
+
+With the restraint that mass must be at most 1500g:
+-Kale, raw: 216.7 g
+-Seeds, sunflower seed kernels, dry roasted, with salt added: 40.9 g
+-Beef, round, top round roast, boneless, separable lean only, trimmed to 0" fat, select, raw: 36.4 g
+-Salt, table, iodized: 1.5 g
+-Beans, Dry, Brown (0% moisture): 13.7 g
+-Broccoli, raw: 609.8 g
+-Eggs, Grade A, Large, egg whole: 150.9 g
+-Mushroom, lion's mane: 41.9 g
+-Almond milk, unsweetened, plain, shelf stable: 137.5 g
+-Mushroom, maitake: 52.9 g
+-Soy milk, unsweetened, plain, refrigerated: 197.8 g
+Total Calories: 952.7
+Total Mass: 1500.0 g
+
+
+
+
+
