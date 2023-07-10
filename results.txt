@@ -37,5 +37,94 @@ Total Mass: 1500.0 g
 
 
 
+Restraint that mass <= 1500g and without soy and almond milk:
+-Kale, raw: 350.85 g
+-Seeds, sunflower seed kernels, dry roasted, with salt added: 43.7 g
+-Egg, yolk, dried: 7.92 g
+-Salt, table, iodized: 1.49 g
+-Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim): 836.73 g
+-Beans, Dry, Red (0% moisture): 12.59 g
+-Broccoli, raw: 14.47 g
+-Eggs, Grade A, Large, egg whole: 111.94 g
+-Flour, wheat, all-purpose, enriched, unbleached: 1.89 g
+-Oil, sunflower: 5.98 g
+-Mushroom, maitake: 112.45 g
+Total Calories: 1026.2
+Total Mass: 1500 g (3.3 lbs)
 
 
+
+
+ALL DATABASES:
+
+No restraints:
+iotin (UG) NOT INCLUDED
+Iodine, I (UG) NOT INCLUDED
+Manganese, Mn (MG) NOT INCLUDED
+Molybdenum, Mo (UG) NOT INCLUDED
+Nickel, Ni (UG) NOT INCLUDED
+Pantothenic acid (MG) NOT INCLUDED
+-Liver, beef: 31.27 g
+-Kidney: 39.32 g
+-Fish, salmon, smoked: 83.0 g
+-Oysters, canned: 4.73 g
+-Broccoli raab, raw: 234.81 g
+-Chard, raw: 225.29 g
+-Watercress, raw: 650.15 g
+Total Calories: 382.7
+Total Mass: 1269 g (2.8 lbs)
+
+
+ALL DATABASES + FOUNDATION FOODS
+
+No Restraints:
+-Salt, table, iodized: 931.02 g
+-Beans, Dry, Red (0% moisture): 12.59 g
+-Broccoli, raw: 819.67 g
+-Almond milk, unsweetened, plain, shelf stable: 209.87 g
+-Mushroom, maitake: 85.54 g
+-Kidney: 86.04 g
+-Fish, salmon, smoked: 62.8 g
+-Oysters, canned: 2.81 g
+-Chard, raw: 93.99 g
+-Watercress, raw: 407.76 g
+Total Calories: 618.5
+Total Mass: 2712 g (6.0 lbs)
+
+
+
+<= 1500g total and <= 5000mg of sodium:
+-Kale, raw: 38.64 g
+-Salt, table, iodized: 2.95 g
+-Beans, Dry, Red (0% moisture): 12.59 g
+-Broccoli, raw: 796.23 g
+-Almond milk, unsweetened, plain, shelf stable: 181.23 g
+-Mushroom, maitake: 86.44 g
+-Kidney: 87.1 g
+-Fish, salmon, smoked: 64.2 g
+-Oysters, canned: 2.62 g
+-Chard, raw: 21.22 g
+-Spinach, frozen, cooked, no added fat: 163.55 g
+-Tomatoes, canned, reduced sodium, cooked: 43.21 g
+Total Calories: 637.9
+Total Mass: 1500 g (3.3 lbs)
+
+
+
+<= 1500g total and <= 5000mg of sodium, and with first group of removed foods:
+-Kale, raw: 48.41 g
+-Salt, table, iodized: 2.95 g
+-Beans, Dry, Red (0% moisture): 12.59 g
+-Broccoli, raw: 790.31 g
+-Mushroom, maitake: 92.11 g
+-Fish, salmon, smoked: 61.25 g
+-Oysters, canned: 2.84 g
+-Egg, whole, raw: 122.11 g
+-Broccoli raab, raw: 62.68 g
+-Spinach, frozen, cooked, no added fat: 288.98 g
+-Tomatoes, canned, reduced sodium, cooked: 15.76 g
+Total Calories: 691.1
+Total Mass: 1500 g (3.3 lbs)
+
+
+ALL SUBSEQUENT LISTS HAVE <1500g TOTAL, <5000mg SODIUM, AND REMOVED THE FOODS IN THE remove_foods LIST.

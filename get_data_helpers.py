@@ -198,9 +198,15 @@ def get_all_databases_table():
     
     path = 'C:\\Users\\chris\\Desktop\\mmn data\\All Databases' 
     
-    path = os.getcwd() + '\\data\\All Databases'
+    #path = os.getcwd() + '\\data\\All Databases'
+    dairy = [1002, 1004, 1006, 1008, 1404, 1602, 1604, 1820, 1822]
+    proteins = [2002, 2004, 2006, 2008, 2010, 2202, 2206, 2502, 2802, 2804]
+    fish = [2402, 2404]
+    carbs = [4002, 4004, 4202, 4204, 4206, 4208, 4802, 4804]
+    fruit_and_veg = [6002, 6004, 6006, 6008, 6009, 6011, 6012, 6014, 6016, 6018, 6020, 6022, 6024, 6402, 6404, 6406, 6407, 6409, 6410, 6411, 6412, 6413, 6414, 6416, 6418, 6420, 6802]
+    fats = [8002, 8006, 8008, 8408]
+    cats = [cat for sublist in [dairy, proteins, fish, carbs, fruit_and_veg, fats] for cat in sublist]
     
-    cats = [1002, 1004, 1006, 1008, 1404, 1602, 1604, 1820, 1822, 2002, 2004, 2006, 2008, 2010, 2202, 2206, 2402, 2404, 2502, 2802, 2804, 4002, 4004, 4204, 4206, 4208, 4802, 4804, 6002, 6004, 6006, 6008, 6009, 6011, 6012, 6014, 6016, 6018, 6020, 6022, 6024, 6402, 6404, 6406, 6407, 6409, 6410, 6411, 6412, 6413, 6414, 6416, 6418, 6420, 6802, 8002, 8006, 8008, 8408]
     food = pd.read_csv(path + '\\food.csv')
     food = food[food['food_category_id'].isin(cats)]
     drop_cols(food, ['data_type', 'food_category_id', 'publication_date'])
@@ -292,3 +298,12 @@ def find_PDV(df):
         string += f'{key}: {round(df[key].sum() / value * 100, 1)  }%\n'
         
     return string
+    
+def remove_foods(df, foods):
+    return df[~df['description'].isin(foods)].reset_index(drop=True)
+    
+def search(df, food):
+    mask = df['description'].str.contains(food, case=False)
+    return df[mask].reset_index(drop=True)
+    
+    

@@ -65,7 +65,7 @@ def default_problem(df, add_constraints = []):
     foods = df.index  # Assume the index of the dataframe represents food items
     food_vars = LpVariable.dicts("Food", foods, lowBound=0, cat="Continuous")
 
-    # Define the objective function to minimize the sum of another column
+    # Define the objective function to minimize the sum of total calories
     objective = (
         lpSum([food_vars[i] * df.loc[i, "Energy (KCAL)"] for i in foods])
     )
@@ -75,7 +75,69 @@ def default_problem(df, add_constraints = []):
     
     # Add the constraints for nutrient requirements
     for nutrient, min_amount in nutrients_dict.items():
-        #display(df[nutrient].head())
+        
+        if nutrient in df and df[nutrient].gt(0).any():
+            nutrient_values = df[nutrient]
+            nutrient_total = (
+                lpSum([food_vars[i] * nutrient_values[i] for i in foods])
+            )
+            problem += (nutrient_total >= min_amount)
+            
+        else:
+            sol += f'{nutrient} NOT INCLUDED\n'
+    for constraint in add_constraints:
+        add_constraint(df, problem, constraint, foods, food_vars)
+    
+    
+    
+    problem.solve()
+    
+
+    
+    
+    if problem.status == 1:
+        mass_total = 0
+
+        # Print the optimal solution
+        for food in foods:
+            if food_vars[food].varValue is not None and food_vars[food].varValue > 0:
+                mass_total += (food_vars[food].varValue * 100)
+                sol += f"-{index_to_description[food]}: {round(food_vars[food].varValue * 100, 2)} g\n"
+
+        sol += f"Total Calories: {round(problem.objective.value(), 1)}\n"
+        sol += f"Total Mass: {round(mass_total)} g ({round(mass_total/453.59237, 1)} lbs)"
+    
+    else:
+        sol += "Problem is undefined with the given constraints."
+        
+    return sol
+    
+    
+    
+
+def prob_with_set_foods(df, add_constraints = [], foods_df):
+    sol = ""
+    
+    index_to_description = {i: description for i, description in enumerate(df["description"])}
+
+    # Create the LP problem
+    problem = LpProblem("Food Selection", LpMinimize)
+
+    # Create the decision variables (amount of each food item to select)
+    foods = df.index  # Assume the index of the dataframe represents food items
+    food_vars = LpVariable.dicts("Food", foods, lowBound=0, cat="Continuous")
+
+    # Define the objective function to minimize the sum of total calories
+    objective = (
+        lpSum([food_vars[i] * df.loc[i, "Energy (KCAL)"] for i in foods])
+    )
+    problem += objective
+
+    
+    
+    # Add the constraints for nutrient requirements
+    for nutrient, min_amount in nutrients_dict.items():
+        
         if nutrient in df and df[nutrient].gt(0).any():
             nutrient_values = df[nutrient]
             nutrient_total = (
